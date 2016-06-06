@@ -1,0 +1,17 @@
+{
+  "name": "outyua/wcs",
+  "description": "网宿云存储wcs SDK工具",
+  "minimum-stability": "beta",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "wanglv",
+      "email": "wanglv93@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Outyua\\Wcs\\": ""
+    }
+  }
+}
