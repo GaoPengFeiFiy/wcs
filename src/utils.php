@@ -52,7 +52,7 @@ function get_user_agent()
     return $ua;
 }
 
-function http_get($url)
+function http_get($url, $headers)
 {
     $ch = curl_init();
     $options = array(
@@ -64,7 +64,9 @@ function http_get($url)
         CURLOPT_NOBODY => false,
         CURLOPT_URL => $url
     );
-
+    if (!empty($headers)) {
+        $options[CURLOPT_HTTPHEADER] = $headers;
+    }
     curl_setopt_array($ch, $options);
 
     $result = curl_exec($ch);
@@ -144,7 +146,7 @@ function http_post($url, $headers, $fields)
 //        $resp->header["X-Reqid"] = $reqId;
 //        $resp->header["X-Log"] = $xLog;
 
-    return $ret;
+    return $respBody;
 }
 
 

@@ -24,7 +24,7 @@ class WcsFileManager
 
         $token = get_file_delete_token($bucketName, $fileKey);
 
-        return $this->_do($url, $token);
+        return $this->_doPost($url, $token);
 
     }
 
@@ -46,7 +46,8 @@ class WcsFileManager
 
         $token = get_file_stat_token($bucketName, $fileKey);
 
-        return $this->_do($url, $token);
+
+        return $this->_doGet($url, $token);
     }
 
     /**
@@ -55,11 +56,22 @@ class WcsFileManager
      * @param $token
      * @return mixed
      */
-    private function _do($url, $token)
+    private function _doGet($url, $token)
     {
         $headers = array("Authorization:$token");
-
+        $resp = http_get($url, $headers);
+        return $resp;
+    }
+    /**
+     * 执行给定的操作
+     * @param $url
+     * @param $token
+     * @return mixed
+     */
+    private function _doPost($url, $token)
+    {
+        $headers = array("Authorization:$token");
         $resp = http_post($url, $headers, null);
-        return $resp->respBody;
+        return $resp;
     }
 } 

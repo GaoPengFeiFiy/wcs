@@ -31,7 +31,6 @@ print("bucket: \t$bucketName\n");
 print("file: \t\t$fileKey\n");
 print("\n");
 
-
 $client = new WcsFileManager();
 print($client->stat($bucketName, $fileKey));
 print("\n");

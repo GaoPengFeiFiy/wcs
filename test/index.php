@@ -9,5 +9,4 @@
 
 include_once '../vendor/autoload.php';
 
-$a = new \Outyua\Wcs\WcsFile();
-throw new \Outyua\Wcs\WcsException(13);
+print_r(\Outyua\Wcs\WcsFile::getPrivateDownloadUrl('hotcast-test001', '111.mp4'));
