@@ -105,7 +105,6 @@ class WcsPutPolicy
         if (!empty($this->persistentNotifyUrl)) {
             $policy['persistentNotifyUrl'] = $this->persistentNotifyUrl;
         }
-
         return json_encode($policy);
     }
 

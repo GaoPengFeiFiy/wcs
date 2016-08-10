@@ -15,9 +15,9 @@ class WcsFileDownloader
         $HTTP_PREFIX = 'http://';
 
         if (str_start_with($WCS_GET_URL, $HTTP_PREFIX)) {
-            $baseUrl = $HTTP_PREFIX . $bucketName . '.' . substr($WCS_GET_URL, strlen($HTTP_PREFIX));
+            $baseUrl = $HTTP_PREFIX . substr($WCS_GET_URL, strlen($HTTP_PREFIX));
         } else {
-            $baseUrl = $bucketName . '.' . $WCS_GET_URL;
+            $baseUrl = $WCS_GET_URL;
         }
 
         $baseUrl .= '/' . $fileName;

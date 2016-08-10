@@ -49,7 +49,7 @@ class WcsFile {
      * @return bool|mixed       返回数组,失败返回false
      */
 
-    public static function getPrivateDownloadUrl( $bucket,  $key) {
+    private static function getPrivateDownloadUrl( $bucket,  $key) {
         $wcs = WcsFactory::getWcsFileDownloader();
         return $wcs->build_private_url($bucket, $key);
     }

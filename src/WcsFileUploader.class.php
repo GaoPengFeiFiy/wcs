@@ -76,10 +76,8 @@ class WcsFileUploader
         }
 
         $token = $putPolicy->get_token(null);
-
         $mimeType = null;
         $fields = array('token' => $token, 'file' => $this->create_file($localFile, $mimeType));
-
         $resp = http_post($url, null, $fields);
 
         return $resp;

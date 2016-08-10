@@ -9,4 +9,4 @@
 
 include_once '../vendor/autoload.php';
 
-print_r(\Outyua\Wcs\WcsFile::getPrivateDownloadUrl('hotcast-test001', '111.mp4'));
+print_r(\Outyua\Wcs\WcsFile::getPublicDownloadUrl('hotcast-test001', '111.mp4'));
